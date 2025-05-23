@@ -98,7 +98,7 @@ section h2 {
 #about p {
     font-size: 1.1em;
     line-height: 1.7;
-    text-align: justify; /* Justify text for a cleaner look */
+    text-align: left; /* Changed from justify for better Russian text readability */
 }
 
 #about img {
@@ -123,12 +123,20 @@ section h2 {
     background-color: #f8f9fa; /* Light gray, consistent with body */
 }
 
-#skills ul {
+#skills h3 { /* Style for the new subheadings */
+    text-align: center;
+    color: #343a40;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+#skills .skills-list { /* Changed from #skills ul */
     list-style: none;
     padding-left: 0;
 }
 
-#skills ul li {
+#skills .skills-list li { /* Changed from #skills ul li */
     background: #e9ecef; /* Slightly different background for skill items */
     color: #343a40;
     margin-bottom: 10px; /* Increased margin */
@@ -136,15 +144,17 @@ section h2 {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for skill items */
     transition: transform 0.2s ease; /* Add hover effect */
+    word-break: break-word; /* Help wrap long skill names */
+    /* Consider adding a min-height if items become very uneven, e.g., min-height: 50px; */
 }
 
-#skills ul li:hover {
+#skills .skills-list li:hover { /* Changed from #skills ul li:hover */
     transform: translateY(-3px); /* Lift skill item on hover */
 }
 
 /* Skills column layout for medium and up */
 @media (min-width: 576px) { /* Start two columns earlier */
-    #skills ul {
+    #skills .skills-list { /* Changed from #skills ul */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px; /* Increased gap */
@@ -152,7 +162,7 @@ section h2 {
 }
 
 @media (min-width: 992px) { /* Three columns for large screens */
-    #skills ul {
+    #skills .skills-list { /* Changed from #skills ul */
         grid-template-columns: repeat(3, 1fr);
     }
 }
